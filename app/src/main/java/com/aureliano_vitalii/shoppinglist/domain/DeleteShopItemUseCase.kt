@@ -1,8 +1,8 @@
 package com.aureliano_vitalii.shoppinglist.domain
 
-class DeleteShopItemUseCase {
+class DeleteShopItemUseCase(private val shopListRepository:ShopListRepository) {
 
-    fun deleteShopItem(ShopItem:ShopItem){
-        // TODO: 1/27/2022  
+    fun deleteShopItem(shopItem:ShopItem){
+        shopListRepository.deleteShopItem(shopItem)
     }
 }

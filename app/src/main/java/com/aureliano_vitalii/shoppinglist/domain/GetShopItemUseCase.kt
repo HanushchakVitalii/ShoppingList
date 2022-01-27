@@ -1,9 +1,9 @@
 package com.aureliano_vitalii.shoppinglist.domain
 
-class GetShopItemUseCase {
+class GetShopItemUseCase(private val shopListRepository:ShopListRepository) {
 
     fun getShopItem(shopItemId: Int): ShopItem{
-        // TODO: 1/27/2022  
+        return shopListRepository.getShopItem(shopItemId)
     }
 
 }
