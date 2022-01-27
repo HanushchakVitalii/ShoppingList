@@ -1,8 +1,8 @@
 package com.aureliano_vitalii.shoppinglist.domain
 
-class EditShopItemUseCase {
+class EditShopItemUseCase(private val shopListRepository:ShopListRepository) {
 
-    fun editShopItem(ShopItem:ShopItem){
-        // TODO: 1/27/2022
+    fun editShopItem(shopItem:ShopItem){
+        shopListRepository.editShopItem(shopItem)
     }
 }
