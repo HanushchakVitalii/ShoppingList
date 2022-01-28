@@ -2,11 +2,11 @@ package com.aureliano_vitalii.shoppinglist.domain
 
 interface ShopListRepository {
 
-    fun addShopItem(ShopItem:ShopItem)
+    fun addShopItem(shopItem:ShopItem)
 
-    fun deleteShopItem(ShopItem:ShopItem)
+    fun deleteShopItem(shopItem:ShopItem)
 
-    fun editShopItem(ShopItem:ShopItem)
+    fun editShopItem(shopItem:ShopItem)
 
     fun getShopItem(shopItemId: Int): ShopItem
 
