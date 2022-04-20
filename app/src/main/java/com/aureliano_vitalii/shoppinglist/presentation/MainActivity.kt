@@ -9,6 +9,7 @@ import com.aureliano_vitalii.shoppinglist.R
 class MainActivity : AppCompatActivity() {
 
     private  lateinit var viewModel: MainViewModel
+    private var count =0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,7 +17,11 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this)[MainViewModel::class.java]
         viewModel.shopList.observe(this){
             Log.d("MainActivityTest", it.toString())
+            if(count == 0){
+                val item = it[0]
+                viewModel.changeShopItem(item)
+                count++
+            }
         }
-        viewModel.getShopList()
     }
 }
