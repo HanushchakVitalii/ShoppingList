@@ -13,16 +13,19 @@ import java.lang.RuntimeException
 
 class ShopListAdapter : RecyclerView.Adapter<ShopListAdapter.ShopItemViewHolder>() {
 
-    var count = 0
+    //var count = 0
     var shopList = listOf<ShopItem>()
         set(value) {
             field = value
             notifyDataSetChanged()
         }
 
+    var onShopItemLongClickListener: ((ShopItem) -> Unit)? = null
+    var onShopItemClickListener: ((ShopItem) -> Unit)? = null
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShopItemViewHolder {
-        Log.d("ShopListAdapter", "onCreateViewHolder, count: ${count++} ")
+        //Log.d("ShopListAdapter", "onCreateViewHolder, count: ${count++} ")
         val layout = when (viewType) {
             VIEW_TYPE_DISABLED -> R.layout.item_shop_disabled
             VIEW_TYPE_ENABLED -> R.layout.item_shop_enabled
@@ -37,6 +40,11 @@ class ShopListAdapter : RecyclerView.Adapter<ShopListAdapter.ShopItemViewHolder>
         viewHolder.tvName.text = shopItem.name
         viewHolder.tvCount.text = shopItem.count.toString()
         viewHolder.view.setOnLongClickListener {
+            onShopItemLongClickListener?.invoke(shopItem)
+            true
+        }
+        viewHolder.view.setOnClickListener{
+            onShopItemClickListener?.invoke(shopItem)
             true
         }
     }
