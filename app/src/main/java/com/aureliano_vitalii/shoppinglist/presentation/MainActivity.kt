@@ -3,14 +3,11 @@ package com.aureliano_vitalii.shoppinglist.presentation
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.aureliano_vitalii.shoppinglist.R
-import com.aureliano_vitalii.shoppinglist.domain.ShopItem
+
 
 
 class MainActivity : AppCompatActivity() {

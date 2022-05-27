@@ -1,6 +1,5 @@
 package com.aureliano_vitalii.shoppinglist.presentation
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.aureliano_vitalii.shoppinglist.data.ShopListRepositoryImpl
 import com.aureliano_vitalii.shoppinglist.domain.DeleteShopItemUseCase

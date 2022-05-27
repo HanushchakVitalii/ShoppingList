@@ -33,7 +33,6 @@ class ShopListAdapter : ListAdapter<ShopItem, ShopItemViewHolder>(ShopItemDiffCa
         }
         viewHolder.view.setOnClickListener{
             onShopItemClickListener?.invoke(shopItem)
-            true
         }
     }
 
